@@ -21,9 +21,31 @@ matrix:
       compiler: gcc
 
     - os: linux
+      arch: arm64-graviton2
+      virt: lxd
+      dist: xenial
+      group: edge
+      env: CHANNEL=stable
+      compiler: gcc
+    
+    - os: linux
       env: CHANNEL=devel
       compiler: clang
 
+    - os: linux
+      env: CHANNEL=devel
+      arch: arm64
+      compiler: clang
+    
+    - os: linux
+      env: CHANNEL=devel
+      arch: arm64-graviton2
+      virt: lxd
+      dist: xenial
+      group: edge
+      compiler: clang
+    
+    
     # On OSX we only test against clang (gcc is mapped to clang by default)
     - os: osx
       env: CHANNEL=stable
